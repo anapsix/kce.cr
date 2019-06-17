@@ -13,11 +13,14 @@ endif
 VERSION:= $(shell cat VERSION)
 TARGET:= kcp
 RELEASE_DIR:= ./releases
-OUTPUT:= $(RELEASE_DIR)/$(TARGET)_$(VERSION)_$(OS)-$(ARCH)
+OUTPUT:= $(RELEASE_DIR)/$(TARGET)-$(VERSION)-$(OS)-$(ARCH)
 
 .PHONY: all clean
 
 all: $(TARGET)
+
+releases: $(TARGET) pack docker
+	docker run -it --rm -v ${PWD}/releases:/app kcp cp /kcp /app/$(TARGET)-$(VERSION)-linux-amd64
 
 docker:
 	docker build -t kcp .

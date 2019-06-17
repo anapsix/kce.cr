@@ -24,14 +24,6 @@ parser = OptionParser.new do |op|
 end
 parser.parse(ARGV)
 
-config = {
-  "kind": "Config",
-  "apiVersion": "v1",
-  "clusters": [] of YAML::Any,
-  "contexts": [] of YAML::Any,
-  "users": [] of YAML::Any
-}
-
 # unless File.exists?(kubeconfig)
 #   puts "Unable to read file: #{kubeconfig}, exiting.."
 #   exit 1
@@ -43,6 +35,15 @@ if (target_context == nil)
   exit 1
 end
 
+config = {
+  "kind": "Config",
+  "apiVersion": "v1",
+  "current-context": target_context,
+  "clusters": [] of YAML::Any,
+  "contexts": [] of YAML::Any,
+  "users": [] of YAML::Any,
+}
+
 data = YAML.parse(File.read(kubeconfig))
 
 ## find requested context
@@ -53,6 +54,7 @@ if (context.size != 1)
   STDERR.puts parser
   exit 1
 end
+
 
 ## get cluster name from context
 cluster_name = context[0]["context"]["cluster"].to_s
