@@ -7,7 +7,7 @@ Since context includes cluster, and user name, extracting all relevant sections 
 
 ## Usage
 
-```bash
+```
 Usage: kce [arguments]
     -k PATH, --kubeconfig=PATH       Path to kubeconfig file, defaults to KUBECONFIG env value,
                                      if present, otherwise ~/.kube/config
