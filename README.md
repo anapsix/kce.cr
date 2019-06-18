@@ -9,7 +9,8 @@ Since context includes cluster, and user name, extracting all relevant sections 
 
 ```bash
 Usage: kce [arguments]
-    -k PATH, --kubeconfig=PATH       Path to kubeconfig file, defaults to KUBECONFIG env value, if present, otherwise /Users/adancha/.kube/config
+    -k PATH, --kubeconfig=PATH       Path to kubeconfig file, defaults to KUBECONFIG env value,
+                                     if present, otherwise ~/.kube/config
     -c NAME, --context=NAME          Context to extract config for
     -h, --help                       Show this help
     -v, --version                    Display version
