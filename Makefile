@@ -11,7 +11,7 @@ ifeq ($(UNAME_M),x86_64)
 endif
 
 VERSION:= $(shell cat VERSION)
-TARGET:= kcp
+TARGET:= kce
 RELEASE_DIR:= ./releases
 OUTPUT:= $(RELEASE_DIR)/$(TARGET)-$(VERSION)-$(OS)-$(ARCH)
 
@@ -20,10 +20,10 @@ OUTPUT:= $(RELEASE_DIR)/$(TARGET)-$(VERSION)-$(OS)-$(ARCH)
 all: clean releases
 
 releases: version $(TARGET) pack docker
-	docker run -it --rm -v ${PWD}/releases:/app kcp cp /kcp /app/$(TARGET)-$(VERSION)-linux-amd64
+	docker run -it --rm -v ${PWD}/releases:/app kce cp /kce /app/$(TARGET)-$(VERSION)-linux-amd64
 
 docker: version
-	docker build -t kcp .
+	docker build -t kce .
 
 clean:
 	@rm -f $(RELEASE_DIR)/*

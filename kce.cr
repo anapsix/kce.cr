@@ -1,7 +1,7 @@
 require "yaml"
 require "option_parser"
 
-VERSION="0.2.1"
+VERSION="0.3.0"
 
 kubeconfig_default = "#{ENV["HOME"]}/.kube/config"
 kubeconfig = ENV.fetch("KUBECONFIG", kubeconfig_default)
@@ -9,7 +9,8 @@ kubeconfig = ENV.fetch("KUBECONFIG", kubeconfig_default)
 target_context = nil
 
 parser = OptionParser.new do |op|
-  op.banner = "Usage: #{PROGRAM_NAME} [arguments]"
+  op.banner = "Kubeconfig-context-extractor extracts sections of KUBECONFIG file based on selected context.\n" +
+              "Usage: #{PROGRAM_NAME} [arguments]"
   op.on("-k PATH", "--kubeconfig=PATH", "Path to kubeconfig file, defaults to KUBECONFIG env value, if present, otherwise #{kubeconfig_default}") { |f| kubeconfig = f }
   op.on("-c NAME", "--context=NAME", "Context to extract config for") { |c| target_context = c }
   op.on("-h", "--help", "Show this help") { puts op; exit 0 }

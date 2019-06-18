@@ -1,6 +1,6 @@
-# kubeconfig-parser
+# kubeconfig-context-extractor
 
-Kubeconfig-parser extracts sections of [KUBECONFIG][1] file based on selected context.
+Kubeconfig-context-extractor extracts sections of [KUBECONFIG][1] file based on selected context.
 
 Since context includes cluster, and user name, extracting all relevant sections allows creating fully working KUBECONFIG for selected context.
 
@@ -8,7 +8,7 @@ Since context includes cluster, and user name, extracting all relevant sections 
 ## Usage
 
 ```bash
-Usage: kcp [arguments]
+Usage: kce [arguments]
     -k PATH, --kubeconfig=PATH       Path to kubeconfig file, defaults to KUBECONFIG env value, if present, otherwise /Users/adancha/.kube/config
     -c NAME, --context=NAME          Context to extract config for
     -h, --help                       Show this help
