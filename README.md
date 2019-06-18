@@ -29,4 +29,4 @@ make all
 
 [ Link Reference ]::
 [1]: https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#define-clusters-users-and-contexts
-[2]: ./releases
+[2]: https://github.com/anapsix/kubeconfig-context-extractor/releases
