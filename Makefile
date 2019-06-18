@@ -15,19 +15,23 @@ TARGET:= kcp
 RELEASE_DIR:= ./releases
 OUTPUT:= $(RELEASE_DIR)/$(TARGET)-$(VERSION)-$(OS)-$(ARCH)
 
-.PHONY: all clean
+.PHONY: all clean version
 
-all: $(TARGET)
+all: clean releases
 
-releases: $(TARGET) pack docker
+releases: version $(TARGET) pack docker
 	docker run -it --rm -v ${PWD}/releases:/app kcp cp /kcp /app/$(TARGET)-$(VERSION)-linux-amd64
 
-docker:
+docker: version
 	docker build -t kcp .
 
 clean:
 	@rm -f $(RELEASE_DIR)/*
 	@echo >&2 "cleaned up"
+
+version:
+	@sed -i "" 's/^VERSION.*/VERSION="$(VERSION)"/g' $(TARGET).cr
+	@echo "Version set to $(VERSION)"
 
 $(TARGET): % : $(filter-out $(TEMPS), $(OBJ)) %.cr
 	@crystal build $@.cr -o $(OUTPUT) -p

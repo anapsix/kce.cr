@@ -1,6 +1,8 @@
 require "yaml"
 require "option_parser"
 
+VERSION="0.2.1"
+
 kubeconfig_default = "#{ENV["HOME"]}/.kube/config"
 kubeconfig = ENV.fetch("KUBECONFIG", kubeconfig_default)
 
@@ -10,7 +12,8 @@ parser = OptionParser.new do |op|
   op.banner = "Usage: #{PROGRAM_NAME} [arguments]"
   op.on("-k PATH", "--kubeconfig=PATH", "Path to kubeconfig file, defaults to KUBECONFIG env value, if present, otherwise #{kubeconfig_default}") { |f| kubeconfig = f }
   op.on("-c NAME", "--context=NAME", "Context to extract config for") { |c| target_context = c }
-  op.on("-h", "--help", "Show this help") { puts op }
+  op.on("-h", "--help", "Show this help") { puts op; exit 0 }
+  op.on("-v", "--version", "Display version") { puts "v#{VERSION}"; exit 0 }
   op.invalid_option do |opt|
     STDERR.puts "ERROR: '#{opt}' is not a valid option."
     STDERR.puts op
