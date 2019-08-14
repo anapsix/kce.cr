@@ -7,6 +7,8 @@ Since context includes cluster, and user name, extracting all relevant sections 
 
 ## Usage
 
+
+### CLI
 ```
 Usage: kce [arguments]
     -k PATH, --kubeconfig=PATH       Path to kubeconfig file, defaults to KUBECONFIG env value,
@@ -14,6 +16,21 @@ Usage: kce [arguments]
     -c NAME, --context=NAME          Context to extract config for
     -h, --help                       Show this help
     -v, --version                    Display version
+```
+
+### Class
+```
+require "./kce.cr"
+
+kce = KCE.new(targetContext: "dev-cluster1")
+puts "KUBECONFIG: #{kce.kubeConfig}"
+puts "Target Context: #{kce.targetContext}"
+
+puts "## KCE"
+puts kce.inspect
+
+puts "## Config"
+puts kce.config
 ```
 
 ## Install
