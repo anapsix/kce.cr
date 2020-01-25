@@ -57,9 +57,9 @@ class KCE
       "kind": "Config",
       "apiVersion": "v1",
       "current-context": @targetContext,
-      "clusters": cluster[0],
-      "contexts": context[0],
-      "users": user[0]
+      "clusters": cluster,
+      "contexts": context,
+      "users": user
     }
   end
 

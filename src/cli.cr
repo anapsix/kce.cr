@@ -1,7 +1,7 @@
 require "./kce.cr"
 require "option_parser"
 
-VERSION="0.4.0"
+VERSION="0.4.1"
 
 kubeconfig_default = "#{ENV["HOME"]}/.kube/config"
 kubeconfig = ENV.fetch("KUBECONFIG", kubeconfig_default)
