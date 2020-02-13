@@ -4,6 +4,10 @@ Kubeconfig-context-extractor extracts sections of [KUBECONFIG][1] file based on 
 
 Since context includes cluster, and user name, extracting all relevant sections allows creating fully working KUBECONFIG for selected context.
 
+Same functionality can be achieved with native kubectl command
+```
+kubectl --context=${context_name} config view --minify --flatten
+```
 
 ## Usage
 
