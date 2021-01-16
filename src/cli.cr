@@ -1,7 +1,7 @@
-require "./kce.cr"
 require "option_parser"
+require "./kce"
 
-VERSION="0.4.1"
+VERSION = {{ read_file("#{__DIR__}/../VERSION") }}
 
 kubeconfig_default = "#{ENV["HOME"]}/.kube/config"
 kubeconfig = ENV.fetch("KUBECONFIG", kubeconfig_default)
@@ -38,6 +38,13 @@ if target_context.empty?
   exit 1
 end
 
-
-kce = KCE.new(targetContext: target_context)
-puts kce.config
+begin
+  kce = KCE.new(kubeconfig: kubeconfig, target_context: target_context)
+  puts kce.config
+rescue KCE::ContextMissingError
+  STDERR.puts "\"#{target_context}\" context is not found in \"#{kubeconfig}\""
+  exit 1
+rescue ex
+  STDERR.puts ex.message
+  exit 1
+end

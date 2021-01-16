@@ -1,11 +1,12 @@
 ## this stage installs everything required to build the project
-FROM alpine:3.9 as build
-RUN apk add --no-cache alpine-sdk yaml-dev crystal upx
+FROM alpine:3.13 as build
+RUN apk add --no-cache musl-dev yaml-static crystal upx
 WORKDIR /tmp
-COPY VERSION /tmp/VERSION
-COPY ./src /tmp/src
+COPY VERSION .
+COPY shard.yml .
+COPY ./src ./src
 RUN \
-    crystal build --progress --static src/cli.cr -o /tmp/kce && \
+    crystal build --progress --release --static src/cli.cr -o /tmp/kce && \
     upx /tmp/kce && \
     echo >&2 "## Version check: $(/tmp/kce -v)" && \
     echo >&2 "## Help Check" && \

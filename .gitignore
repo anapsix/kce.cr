@@ -1,3 +1,5 @@
 *.dwarf
-kce
+.icr*
 releases/
+docs/
+bin/

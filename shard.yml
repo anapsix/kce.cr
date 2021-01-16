@@ -1,0 +1,11 @@
+name: kce
+version: 0.5.0
+
+authors:
+  - Anastas Dancha <adancha@random.io>
+
+targets:
+  kce:
+    main: src/cli.cr
+
+license: MIT
