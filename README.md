@@ -2,6 +2,8 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/anapsix/kce.cr.svg)][2]
 
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](<LINK-TO-YOUR-DOCUMENTATION>)
+
 KCE (Kubeconfig Context Extractor) extracts sections of [KUBECONFIG][1] file based on selected context.
 
 Since context includes cluster, and user name, extracting all relevant sections allows creating fully working KUBECONFIG for selected context.
