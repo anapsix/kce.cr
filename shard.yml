@@ -5,8 +5,9 @@ homepage: https://github.com/anapsix/kce.cr
 description: |
   CLI tool and library to parse KUBECONFIG, and generate new config for specific context.
 
-executables:
-  - kce
+development_dependencies:
+  ghshard:
+    github: bcardiff/ghshard
 
 authors:
   - Anastas Dancha <anapsix@random.io>

@@ -1,10 +1,9 @@
 # KCE.cr
 
-[![GitHub release](https://img.shields.io/github/v/release/anapsix/kce.cr.svg)][2]
+[![GitHub release](https://img.shields.io/github/v/release/anapsix/kce.cr.svg)](https://github.com/anapsix/kce.cr/releases)
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://anapsix.github.io/kce.cr/api/latest)
 
-[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](<LINK-TO-YOUR-DOCUMENTATION>)
-
-KCE (Kubeconfig Context Extractor) extracts sections of [KUBECONFIG][1] file based on selected context.
+KCE (Kubeconfig Context Extractor) extracts sections of [KUBECONFIG](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#define-clusters-users-and-contexts) file based on selected context.
 
 Since context includes cluster, and user name, extracting all relevant sections allows creating fully working KUBECONFIG for selected context.
 
@@ -16,7 +15,7 @@ kubectl --context=${context_name} config view --minify --flatten
 
 ## Install
 
-Get latest release from [Releases][2] page.
+Get latest release from [Releases](https://github.com/anapsix/kce.cr/releases) page.
 
 ## Usage
 
@@ -88,3 +87,4 @@ make all
 [ Link Reference ]::
 [1]: https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#define-clusters-users-and-contexts
 [2]: https://github.com/anapsix/kce.cr/releases
+[3]: https://anapsix.github.io/kce.cr/api/latest
