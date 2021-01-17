@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="0.5.0-dev">
+<meta name="crystal_docs.project_name" content="kce">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="kce">
+  <title>kce 0.5.0-dev</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          kce
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.5.0-dev
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="kce/toplevel" data-name="top level namespace">
+      <a href="toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class="parent " data-id="kce/KCE" data-name="kce">
+      <a href="KCE.html">KCE</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="kce/KCE/ConfigReader" data-name="kce::configreader">
+      <a href="KCE/ConfigReader.html">ConfigReader</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="kce/KCE/ConfigReader/Kubeconfig" data-name="kce::configreader::kubeconfig">
+      <a href="KCE/ConfigReader/Kubeconfig.html">Kubeconfig</a>
+      
+        <ul>
+  
+  <li class=" " data-id="kce/KCE/ConfigReader/Kubeconfig/Cluster" data-name="kce::configreader::kubeconfig::cluster">
+      <a href="KCE/ConfigReader/Kubeconfig/Cluster.html">Cluster</a>
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/ConfigReader/Kubeconfig/Context" data-name="kce::configreader::kubeconfig::context">
+      <a href="KCE/ConfigReader/Kubeconfig/Context.html">Context</a>
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/ConfigReader/Kubeconfig/User" data-name="kce::configreader::kubeconfig::user">
+      <a href="KCE/ConfigReader/Kubeconfig/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/ContextEmptyError" data-name="kce::contextemptyerror">
+      <a href="KCE/ContextEmptyError.html">ContextEmptyError</a>
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/ContextMissingError" data-name="kce::contextmissingerror">
+      <a href="KCE/ContextMissingError.html">ContextMissingError</a>
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/NoFileAccessError" data-name="kce::nofileaccesserror">
+      <a href="KCE/NoFileAccessError.html">NoFileAccessError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="kce.cr" class="anchor" href="#kce.cr">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>KCE.cr</h1>
+
+<p>[<img src="https://img.shields.io/github/v/release/anapsix/kce.cr.svg" alt="GitHub release"/>][2]
+<a href="<LINK-TO-YOUR-DOCUMENTATION>" target="_blank"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a></p>
+
+<p>KCE (Kubeconfig Context Extractor) extracts sections of [KUBECONFIG][1] file based on selected context.</p>
+
+<p>Since context includes cluster, and user name, extracting all relevant sections allows creating fully working KUBECONFIG for selected context.</p>
+
+<p>Same functionality can be achieved with native kubectl command</p>
+
+<pre><code class="language-sh">kubectl --context=${context_name} config view --minify --flatten</code></pre>
+
+<h2><a id="install" class="anchor" href="#install">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Install</h2>
+
+<p>Get latest release from [Releases][2] page.</p>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<h3><a id="cli" class="anchor" href="#cli">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>CLI</h3>
+
+<pre><code class="language-sh">Usage: kce [arguments]
+    -k PATH, --kubeconfig=PATH       Path to kubeconfig file, defaults to KUBECONFIG env value,
+                                     if present, otherwise ~/.kube/config
+    -c NAME, --context=NAME          Context to extract config for
+    -h, --help                       Show this help
+    -v, --version                    Display version</code></pre>
+
+<h3><a id="library" class="anchor" href="#library">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Library</h3>
+
+<p>Add <code>kce</code> to <code>shard.yml</code> dependencies</p>
+
+<pre><code class="language-yaml">dependencies:
+  kce:
+    github: anapsix/kce.cr</code></pre>
+
+<h3><a id="kce" class="anchor" href="#kce">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>KCE</h3>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;kce&quot;</span>
+
+<span class="c"># using instance methods</span>
+<span class="c"># if path is omitted, KUBECONFIG env variable will be used</span>
+<span class="c"># if env variable is unset, it defaults to &quot;~/.kube/config&quot;</span>
+kce <span class="o">=</span> <span class="t">KCE</span>.<span class="k">new</span>(<span class="s">&quot;my-context&quot;</span>, <span class="s">&quot;/path/to/kubeconfig&quot;</span>)
+puts kce.kubeconfig      <span class="c"># =&gt; path to KUBECOFIG file (String)</span>
+puts kce.target_context  <span class="c"># =&gt; name of context (String)</span>
+puts kce.config          <span class="c"># =&gt; config as YAML (String)&quot;</span>
+puts kce.config_obj      <span class="c"># =&gt; config as Object (from YAML)</span>
+
+<span class="c"># using class methods</span>
+<span class="t">KCE</span>.config(<span class="s">&quot;my-context&quot;</span>, <span class="s">&quot;/path/to/kubeconfig&quot;</span>)     <span class="c"># =&gt; String (YAML)</span>
+<span class="t">KCE</span>.config_obj(<span class="s">&quot;my-context&quot;</span>, <span class="s">&quot;/path/to/kubeconfig&quot;</span>) <span class="c"># =&gt; Object (from YAML)</span></code></pre>
+
+<h3><a id="kceconfig-reader" class="anchor" href="#kceconfig-reader">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>KCE::ConfigReader</h3>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;kce/configreader&quot;</span>
+
+<span class="c"># getting config via instance method</span>
+reader <span class="o">=</span> <span class="t">KCE</span><span class="t">::</span><span class="t">ConfigReader</span>.<span class="k">new</span> <span class="c"># will use `KUBECONFIG` env variable if set</span>
+config <span class="o">=</span> reader.config         <span class="c"># otherwise `$HOME/.kube/config`</span>
+pp! config  <span class="c"># =&gt; config Object (from YAML)</span>
+
+<span class="c"># reading from alternative path</span>
+reader <span class="o">=</span> <span class="t">KCE</span><span class="t">::</span><span class="t">ConfigReader</span>.<span class="k">new</span>(<span class="s">&quot;/path/to/kubeconfig&quot;</span>)
+
+<span class="c"># getting config via class method</span>
+<span class="t">KCE</span><span class="t">::</span><span class="t">ConfigReader</span>.config(<span class="s">&quot;/path/to/kubeconfig&quot;</span>)</code></pre>
+
+<h2><a id="build" class="anchor" href="#build">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Build</h2>
+
+<pre><code class="language-sh"># local build
+shards build --release
+
+# build Docker image, and release binaries (results will vary depending on your )
+make all</code></pre>
+
+<p>[ Link Reference ]::
+[1]: https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#define-clusters-users-and-contexts
+[2]: https://github.com/anapsix/kce.cr/releases
+[3]:</p>
+</div>
+</body>
+</html>

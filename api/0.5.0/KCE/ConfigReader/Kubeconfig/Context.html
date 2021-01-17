@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="0.5.0-dev">
+<meta name="crystal_docs.project_name" content="kce">
+
+
+<link href="../../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="kce">
+  <title>KCE::ConfigReader::Kubeconfig::Context - kce 0.5.0-dev</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../../index.html">
+          kce
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.5.0-dev
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="kce/toplevel" data-name="top level namespace">
+      <a href="../../../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="kce/KCE" data-name="kce">
+      <a href="../../../KCE.html">KCE</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="kce/KCE/ConfigReader" data-name="kce::configreader">
+      <a href="../../../KCE/ConfigReader.html">ConfigReader</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="kce/KCE/ConfigReader/Kubeconfig" data-name="kce::configreader::kubeconfig">
+      <a href="../../../KCE/ConfigReader/Kubeconfig.html">Kubeconfig</a>
+      
+        <ul>
+  
+  <li class=" " data-id="kce/KCE/ConfigReader/Kubeconfig/Cluster" data-name="kce::configreader::kubeconfig::cluster">
+      <a href="../../../KCE/ConfigReader/Kubeconfig/Cluster.html">Cluster</a>
+      
+    </li>
+  
+  <li class=" current" data-id="kce/KCE/ConfigReader/Kubeconfig/Context" data-name="kce::configreader::kubeconfig::context">
+      <a href="../../../KCE/ConfigReader/Kubeconfig/Context.html">Context</a>
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/ConfigReader/Kubeconfig/User" data-name="kce::configreader::kubeconfig::user">
+      <a href="../../../KCE/ConfigReader/Kubeconfig/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/ContextEmptyError" data-name="kce::contextemptyerror">
+      <a href="../../../KCE/ContextEmptyError.html">ContextEmptyError</a>
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/ContextMissingError" data-name="kce::contextmissingerror">
+      <a href="../../../KCE/ContextMissingError.html">ContextMissingError</a>
+      
+    </li>
+  
+  <li class=" " data-id="kce/KCE/NoFileAccessError" data-name="kce::nofileaccesserror">
+      <a href="../../../KCE/NoFileAccessError.html">NoFileAccessError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> KCE::ConfigReader::Kubeconfig::Context
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../../KCE/ConfigReader/Kubeconfig/Context.html">KCE::ConfigReader::Kubeconfig::Context</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Used for parsing <code>.contexts</code> in <code>KUBECONFIG</code></p>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">YAML::Serializable</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#context:Hash(String,String%7CInt32%7CBool%7CYAML::Any)-instance-method" class="signature"><strong>#context</strong> : Hash(String, String | Int32 | Bool | YAML::Any)</a>
+        
+          <div class="summary"><p>From <code>KUBECONFIG</code>: <code>.contexts[*]<a href="../../../KCE/ConfigReader/Kubeconfig/Context.html#context:Hash(String,String%7CInt32%7CBool%7CYAML::Any)-instance-method">.context</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#context=(context:Hash(String,String%7CInt32%7CBool%7CYAML::Any))-instance-method" class="signature"><strong>#context=</strong>(context : Hash(String, String | Int32 | Bool | YAML::Any))</a>
+        
+          <div class="summary"><p>From <code>KUBECONFIG</code>: <code>.contexts[*]<a href="../../../KCE/ConfigReader/Kubeconfig/Context.html#context:Hash(String,String%7CInt32%7CBool%7CYAML::Any)-instance-method">.context</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name:String-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+          <div class="summary"><p>From <code>KUBECONFIG</code>: <code>.contexts[*]<a href="../../../KCE/ConfigReader/Kubeconfig/Context.html#name:String-instance-method">.name</a></code></p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+
+        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="context:Hash(String,String|Int32|Bool|YAML::Any)-instance-method">
+      <div class="signature">
+        
+        def <strong>context</strong> : Hash(String, String | Int32 | Bool | YAML::Any)
+
+        <a class="method-permalink" href="#context:Hash(String,String%7CInt32%7CBool%7CYAML::Any)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>From <code>KUBECONFIG</code>: <code>.contexts[*]<a href="../../../KCE/ConfigReader/Kubeconfig/Context.html#context:Hash(String,String%7CInt32%7CBool%7CYAML::Any)-instance-method">.context</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="context=(context:Hash(String,String|Int32|Bool|YAML::Any))-instance-method">
+      <div class="signature">
+        
+        def <strong>context=</strong>(context : Hash(String, String | Int32 | Bool | YAML::Any))
+
+        <a class="method-permalink" href="#context=(context:Hash(String,String%7CInt32%7CBool%7CYAML::Any))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>From <code>KUBECONFIG</code>: <code>.contexts[*]<a href="../../../KCE/ConfigReader/Kubeconfig/Context.html#context:Hash(String,String%7CInt32%7CBool%7CYAML::Any)-instance-method">.context</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>From <code>KUBECONFIG</code>: <code>.contexts[*]<a href="../../../KCE/ConfigReader/Kubeconfig/Context.html#name:String-instance-method">.name</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
