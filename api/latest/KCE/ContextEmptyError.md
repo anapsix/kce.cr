@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /api/0.5/KCE/ContextEmptyError.html
+  - /api/0.6/KCE/ContextEmptyError.html
 ---
