@@ -43,18 +43,15 @@ dependencies:
 ```crystal
 require "kce"
 
-# using instance methods
-# if path is omitted, KUBECONFIG env variable will be used
-# if env variable is unset, it defaults to "~/.kube/config"
 kce = KCE.new("my-context", "/path/to/kubeconfig")
-puts kce.kubeconfig      # => path to KUBECOFIG file (String)
-puts kce.target_context  # => name of context (String)
-puts kce.config          # => config as YAML (String)"
-puts kce.config_obj      # => config as Object (from YAML)
+puts kce.kubeconfig     # => path to selected KUBECONFIG file
+puts kce.kubecontext    # => selected kubecontext ("my-context")
+puts kce.config         # => "my-context" config as Object (from YAML)
+puts kce.config.to_yaml # => "my-context" config as String (from YAML)
 
-# using class methods
-KCE.config("my-context", "/path/to/kubeconfig")     # => String (YAML)
-KCE.config_obj("my-context", "/path/to/kubeconfig") # => Object (from YAML)
+config = KCE.config("my-context", "/path/to/kubeconfig")
+puts config         # => "my-context" config as Object (from YAML)
+puts config.to_yaml # => "my-context" config as String (from YAML)
 ```
 
 ### KCE::ConfigReader
@@ -63,14 +60,15 @@ require "kce/configreader"
 
 # getting config via instance method
 reader = KCE::ConfigReader.new # will use `KUBECONFIG` env variable if set
-config = reader.config         # otherwise `$HOME/.kube/config`
-pp! config  # => config Object (from YAML)
+kubeconfig = reader.config     # otherwise `$HOME/.kube/config`
+puts kubeconfig                # => original KUBECONFIG as Object (from YAML)
+puts kubeconfig.to_yaml        # => original KUBECONFIG as String (from YAML)
 
 # reading from alternative path
 reader = KCE::ConfigReader.new("/path/to/kubeconfig")
 
 # getting config via class method
-KCE::ConfigReader.config("/path/to/kubeconfig")
+kubeconfig = KCE::ConfigReader.config("/path/to/kubeconfig")
 ```
 
 ## Build
@@ -79,12 +77,6 @@ KCE::ConfigReader.config("/path/to/kubeconfig")
 # local build
 shards build --release
 
-# build Docker image, and release binaries (results will vary depending on your )
+# build Docker image, and release binaries (results will vary depending on your OS/ARCH)
 make all
 ```
-
-
-[ Link Reference ]::
-[1]: https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#define-clusters-users-and-contexts
-[2]: https://github.com/anapsix/kce.cr/releases
-[3]: https://anapsix.github.io/kce.cr/api/latest
