@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /api/0.6/KCE/Extractor.html
+  - /api/0.6.1/KCE/Extractor.html
 ---

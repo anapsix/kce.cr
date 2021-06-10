@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /api/0.6/KCE/ConfigReader/Preferences.html
+  - /api/0.6.1/KCE/ConfigReader/Preferences.html
 ---

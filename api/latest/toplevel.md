@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /api/0.6/toplevel.html
+  - /api/0.6.1/toplevel.html
 ---
