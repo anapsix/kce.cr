@@ -80,3 +80,14 @@ shards build --release
 # build Docker image, and release binaries (results will vary depending on your OS/ARCH)
 make all
 ```
+
+## Generate and Publish Docs
+
+> make sure to tag and push changes and tags before generating docs
+
+```sh
+# assuming latest tag is 0.6.1
+ghshard docs:publish
+ghshard docs:redirect 0.6 0.6.1
+ghshard docs:redirect latest 0.6.1
+```
