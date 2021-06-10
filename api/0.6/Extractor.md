@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /api/0.6.0/Extractor.html
+  - /api/0.6.1/Extractor.html
 ---

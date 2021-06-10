@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /api/0.6.0/KCE/Exceptions.html
+  - /api/0.6.1/KCE/Exceptions.html
 ---

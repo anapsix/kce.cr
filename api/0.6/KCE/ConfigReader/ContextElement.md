@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /api/0.6.0/KCE/ConfigReader/ContextElement.html
+  - /api/0.6.1/KCE/ConfigReader/ContextElement.html
 ---
