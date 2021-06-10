@@ -140,7 +140,7 @@ module KCE
       property current_context : String
 
       property kind : String
-      property preferences : Preferences
+      property preferences : Preferences?
       property users : Array(UserElement)
     end
 

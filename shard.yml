@@ -1,5 +1,5 @@
 name: kce
-version: 0.6.0
+version: 0.6.1
 homepage: https://github.com/anapsix/kce.cr
 
 description: |
@@ -16,4 +16,5 @@ targets:
   kce:
     main: src/cli.cr
 
+crystal: '>= 0.36.1'
 license: MIT
